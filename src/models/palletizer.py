@@ -226,7 +226,7 @@ class Palletizer(Generic, EasyResource):  # noqa: F405  (Generic comes from the 
                     max_boxes_to_pack = int(max_boxes_to_pack)
                 except (TypeError, ValueError):
                     return {"error": "max_boxes_to_pack must be an integer"}
-            return await self.autopack("max_boxes_to_pack")
+            return await self.autopack(max_boxes_to_pack)
 
         # Anything unrouted gets an answer and a log line, never a stack trace.
         self.logger.warning(f"unknown command: {verb}")
